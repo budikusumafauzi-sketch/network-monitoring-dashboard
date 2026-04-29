@@ -1,0 +1,351 @@
+========================================
+AUTONOMOUS EXECUTION ENFORCEMENT LAYER
+========================================
+
+You are running inside Gemini CLI in AUTO mode on Windows PowerShell.
+
+This execution MUST be fully autonomous.
+
+EXECUTION CONTROL RULES:
+
+- Do NOT enter interactive mode.
+- Do NOT switch to "accepting edits".
+- Do NOT pause after partial todo completion.
+- Do NOT stop after writing some files.
+- Do NOT wait for confirmation.
+- Do NOT ask clarification questions.
+- Do NOT return control until 100% of the project is fully generated.
+- If task batching occurs, automatically continue.
+- If model fallback occurs, automatically resume execution.
+- If reasoning depth limit is reached, continue from last completed task.
+- Never exit before all required files are written.
+- Continue execution silently until the entire project is complete.
+
+If execution is interrupted internally,
+automatically resume from the last unfinished task.
+
+This is a single continuous execution session.
+
+Return control ONLY after:
+- All backend files are written
+- All frontend files are written
+- Docker files are written
+- README is fully generated
+- Project is 100% complete
+
+========================================
+START MAIN PROJECT GENERATION BELOW
+========================================
+
+
+
+You are a senior fullstack software engineer.
+Your task is to build a production-ready, enterprise-grade, portfolio-quality fullstack application with the following title:
+Network Monitoring Dashboard – Intermediate Level
+
+🔥 CRITICAL EXECUTION RULES
+1. Generate and WRITE the files directly into the project folder.
+2. Do NOT only display code in the output.
+3. Physically create the complete folder structure.
+4. Create each file with the correct path and filename.
+5. Do NOT merge multiple modules into a single file.
+6. Follow clean architecture and separation of concerns.
+7. Use production-ready structure and best practices.
+8. No placeholder logic — implement real working logic.
+9. No single-file shortcuts.
+10. All configuration must use environment variables.
+11. The project must be ready to run with Docker immediately.
+
+
+🎯 PROJECT OBJECTIVE
+Build a fullstack web application that monitors multiple network devices in real-time, including:
+
+1. Authentication system
+2. Role-based access control
+3. Device management
+4. Automated network monitoring
+5. Alert system
+6. Analytics dashboard
+7. Real-time data visualization
+8. Dockerized deployment
+The project must look like it was built by a professional developer for a serious company.
+
+
+🛠 TECH STACK
+Backend
+1. Node.js
+2. Express.js
+3. MySQL
+4. Sequelize ORM
+5. JWT Authentication
+6. bcrypt
+7. node-cron OR setInterval (scheduler)
+8. ping npm package
+
+Frontend
+1. React.js
+2. Axios
+3. Chart.js
+4. Responsive modern UI
+5. Dark mode
+
+Database
+1. MySQL
+
+Containerization
+1. Docker
+2. docker-compose
+
+
+📁 REQUIRED PROJECT STRUCTURE
+Create this exact root structure:
+network-monitoring-dashboard/
+
+  backend/
+    src/
+      controllers/
+      routes/
+      models/
+      middleware/
+      services/
+      config/
+      utils/
+    app.js
+    server.js
+    package.json
+    Dockerfile
+    .env.example
+
+  frontend/
+    src/
+      components/
+      pages/
+      services/
+      hooks/
+      context/
+    App.jsx
+    main.jsx
+    package.json
+    Dockerfile
+    .env.example
+
+  docker-compose.yml
+  README.md
+
+Add any additional necessary files but keep architecture clean and scalable.
+
+
+
+
+✅ REQUIRED FEATURES
+Authentication System
+1. User registration
+2. User login
+3. Password hashing using bcrypt
+4. JWT token generation
+5. Access token middleware
+6. Role-based access (admin / user)
+7. Protected routes
+8. Centralized error handling
+
+Device Management
+Device fields:
+1. name
+2. ip_address
+3. description
+
+Requirements:
+1. Full CRUD
+2. IP address validation
+3. Only admin can delete
+4. Input validation middleware
+
+Monitoring System
+1. Automatically ping all devices every 5 seconds
+
+Store results in monitoring_logs table:
+1. device_id
+2. latency (ms)
+3. status (up/down)
+4. packet_loss (optional)
+5. timestamp
+
+If a device is DOWN 3 consecutive times:
+1. Automatically create alert
+2. Save into alerts table
+
+Monitoring must run as background service using:
+1. node-cron OR setInterval
+
+Alert System
+Alerts table
+
+API endpoint:
+1. GET /alerts
+
+Alerts must include:
+1. device_id
+2. message
+3. created_at
+4. resolved flag
+
+Analytics
+For each device:
+1. Average latency
+2. Uptime percentage
+3. Total downtime
+4. Last status
+5. Monitoring history endpoint
+6. Statistics endpoint
+
+
+🌐 REQUIRED API ENDPOINTS
+Auth
+1. POST /auth/register
+2. POST /auth/login
+
+Devices
+1. GET /devices
+2. POST /devices
+3. PUT /devices/:id
+4. DELETE /devices/:id
+5. GET /devices/:id/history
+6. GET /devices/:id/statistics
+
+Alerts
+1. GET /alerts
+Use REST best practices and proper HTTP status codes.
+
+
+🗄 DATABASE REQUIREMENTS
+Generate complete MySQL SQL schema including:
+Tables:
+1. users
+2. devices
+3. monitoring_logs
+4. alerts
+
+Requirements:
+1. Primary keys
+2. Foreign keys
+3. Indexes
+4. Constraints
+5. Timestamps
+6. ON DELETE behavior
+7. Proper normalization
+8. Sequelize models aligned with schema
+
+
+🎨 FRONTEND REQUIREMENTS
+Pages:
+1. Login page
+2. Register page
+3. Dashboard page
+4. Device management page
+
+Features:
+1. Dark mode toggle
+2. Status badge (green/red)
+3. Real-time chart (refresh every 5 seconds)
+4. Summary cards (analytics)
+5. Alert notification component
+6. Axios API layer abstraction
+7. Global auth context
+8. Protected routes
+9. Loading states
+10. Error handling UI
+11. Responsive layout
+Use clean, modern UI styling.
+
+
+🐳 DOCKER REQUIREMENTS
+Generate:
+1. Backend Dockerfile
+2. Frontend Dockerfile
+3. docker-compose.yml
+4. Proper service networking
+5. MySQL service
+6. Volume for database persistence
+
+Project must run using:
+docker-compose up --build
+Without manual setup.
+
+
+🚀 DEPLOYMENT GUIDE
+Provide:
+1. Local development guide
+2. Docker usage guide
+3. Deploy frontend to Vercel
+4. Deploy backend to VPS (Ubuntu)
+5. Production environment variable configuration
+6. Security recommendations
+
+
+📘 README REQUIREMENTS
+Generate professional README.md including:
+1. Modern GitHub badges
+2. Project overview
+3. Features
+4. Architecture explanation
+5. Tech stack
+6. API documentation table
+7. Database schema explanation
+8. Installation steps
+9. Docker instructions
+10. Deployment guide
+11. Screenshot placeholders
+12. Future improvements
+13. License section
+Make it look like a serious open-source project.
+
+
+💎 CODE QUALITY REQUIREMENTS
+1. Modular
+2. Clean architecture
+3. Production-ready
+4. Use environment variables
+5. Centralized error handler
+6. Logging middleware
+7. Input validation
+8. Scalable structure
+9. No unused code
+10. No TODO placeholders
+11. Proper naming conventions
+12. Consistent formatting
+
+
+🛑 ABSOLUTE FINAL INSTRUCTION
+
+Do NOT print everything as plain text output.
+
+You MUST generate and WRITE the full project structure and files directly into the working directory.
+
+The final result must be a complete, runnable, dockerized fullstack application ready for portfolio use.
+
+Act like a senior engineer delivering production software.
+
+
+========================================
+FINAL EXECUTION GUARD
+========================================
+
+Before exiting:
+
+1. Verify backend folder structure exists.
+2. Verify frontend folder structure exists.
+3. Verify docker-compose.yml exists.
+4. Verify README.md exists.
+5. Ensure no required feature is missing.
+6. Ensure no placeholder logic remains.
+7. Ensure project can run with:
+   docker-compose up --build
+
+If any requirement is incomplete,
+continue execution automatically.
+
+Only exit after full completion.
+
+========================================
+END OF AUTONOMOUS SESSION
+========================================
