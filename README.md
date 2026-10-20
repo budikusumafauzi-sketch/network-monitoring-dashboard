@@ -306,7 +306,7 @@ If you prefer to run services individually without Docker Compose (e.g., for eas
     Remember to use strong passwords.
 6.  **Clone your repository:**
     ```bash
-    git clone https://github.com/yourusername/network-monitoring-dashboard.git
+    git clone https://github.com/budikusumafauzi-sketch/network-monitoring-dashboard.git
     cd network-monitoring-dashboard/backend
     ```
 7.  **Install backend dependencies:**
