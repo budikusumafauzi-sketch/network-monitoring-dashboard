@@ -157,7 +157,7 @@ Follow these steps to set up and run the project locally.
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/network-monitoring-dashboard.git
+git clone https://github.com/budikusumafauzi-sketch/network-monitoring-dashboard.git
 cd network-monitoring-dashboard
 ```
 
